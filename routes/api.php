@@ -9,6 +9,6 @@ use App\Http\Controllers\UserController;
 Route::post("/login",[UserController::class, 'login']);
 
 Route::prefix("search")->group(function () {
-    Route::get('cities/{id}', [CitiesController::class, 'getCities'])->middleware('jwt.auth');
-    Route::get('province/{id}', [ProvincesController::class, 'getProvince'])->middleware('jwt.auth');
+    Route::get('cities', [CitiesController::class, 'getCities'])->middleware('jwt.auth');
+    Route::get('province', [ProvincesController::class, 'getProvince'])->middleware('jwt.auth');
 });
