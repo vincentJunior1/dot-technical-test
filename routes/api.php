@@ -10,6 +10,6 @@ Route::post("/", function() {
 });
 
 Route::prefix("search")->group(function () {
-    Route::get('cities/{id}', [CitiesController::class, 'getCities']);
-    Route::get('province/{id}', [ProvincesController::class, 'getProvince']);
+    Route::get('cities', [CitiesController::class, 'getCities']);
+    Route::get('province', [ProvincesController::class, 'getProvince']);
 });
