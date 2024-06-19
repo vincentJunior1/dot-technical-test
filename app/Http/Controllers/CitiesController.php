@@ -9,9 +9,10 @@ use Illuminate\Support\Facades\Http;
 class CitiesController extends Controller
 {
     //
-    public function getCities(Request $request,$id) 
+    public function getCities(Request $request) 
     {
         $data = [];
+        $id = $request->query('id');
         if ($request->query('direct') == 'true') {
             $data = $this->getCityDirect($id);
         } else {

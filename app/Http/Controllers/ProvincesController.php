@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Http;
 class ProvincesController extends Controller
 {
     //
-    public function getProvince(Request $request,$id) 
+    public function getProvince(Request $request) 
     {
         $data = [];
-
+        $id = $request->query('id');
         if ($request->query('direct') == 'true') {
             $data = $this->getProvinceDirect($id);
         } else {
